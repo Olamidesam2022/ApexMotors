@@ -1,0 +1,8 @@
+import Link from "next/link";
+import { benefits, brand, stats } from "../../content";
+
+export const metadata = { title: "About Apex Motors | Lagos" };
+
+export default function AboutPage() {
+  return <main><section className="page-hero"><span className="eyebrow"><i /> A BETTER KIND OF DEALERSHIP</span><h1>Good cars.<br /><em>Good people.</em></h1><p>Since 2011, we’ve believed buying your next car should feel as good as driving it.</p></section><section className="page-main"><div className="contact-page-layout"><div><h2>Built on trust.<br />Driven by you.</h2><p>Apex Motors began with a simple idea: a premium car buying experience should be built on clarity, care and genuine expertise. More than a decade later, that idea is still at the heart of everything we do.</p><p>From our home at {brand.address}, we help drivers across Nigeria find vehicles that fit the way they live. Every car is carefully considered, independently inspected and presented with honest advice, never pressure.</p><p>Our team stays with you after the keys change hands, because the best part of owning a car is everything that comes next.</p><Link className="button button-primary" href="/inventory">Meet the collection <span>↗</span></Link></div><div className="simple-grid">{stats.map(s => <div className="simple-card" key={s.label}><span>{s.value}{s.suffix}</span><h3>{s.label}</h3><p>And still focused on the details that matter.</p></div>)}</div></div><h2 style={{ marginTop: 70 }}>The things we won’t compromise.</h2><div className="simple-grid">{benefits.map(([num, title, body]) => <div className="simple-card" key={num}><span>{num}</span><h3>{title}</h3><p>{body}</p></div>)}</div></section></main>;
+}
